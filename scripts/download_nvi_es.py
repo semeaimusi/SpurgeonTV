@@ -1,83 +1,69 @@
+import sys
 import urllib.request
 import json
 import os
 import re
+import xml.etree.ElementTree as ET
 
-# Load canonical book definitions from rvr1960 to ensure identical naming and abbreviations
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
+# Load canonical book definitions from rvr1960 to ensure identical Spanish naming and abbreviations
 with open('public/bibles/rvr1960.json', 'r', encoding='utf-8') as f:
     rvr_books = json.load(f)
 
-# Standard USFM mapping to Protestant canon order (0..65)
-USFM_ORDER = [
-    'GEN', 'EXO', 'LEV', 'NUM', 'DEU', 'JOS', 'JDG', 'RUT',
-    '1SA', '2SA', '1KI', '2KI', '1CH', '2CH', 'EZR', 'NEH', 'EST', 'JOB',
-    'PSA', 'PRO', 'ECC', 'SNG', 'ISA', 'JER', 'LAM', 'EZK', 'DAN',
-    'HOS', 'JOL', 'AMO', 'OBA', 'JON', 'MIC', 'NAM', 'HAB', 'ZEP',
-    'HAG', 'ZEC', 'MAL',
-    'MAT', 'MRK', 'LUK', 'JHN', 'ACT', 'ROM', '1CO', '2CO', 'GAL',
-    'EPH', 'PHP', 'COL', '1TH', '2TH', '1TI', '2TI', 'TIT', 'PHM',
-    'HEB', 'JAS', '1PE', '2PE', '1JN', '2JN', '3JN', 'JUD', 'REV'
-]
+url = 'https://raw.githubusercontent.com/Beblia/Holy-Bible-XML-Format/master/SpanishNVIBible.xml'
+cache_xml = r'C:\Users\fcout\.gemini\antigravity\brain\3381e767-4461-4bae-afd4-138ff074fbc7\scratch\SpanishNVIBible.xml'
+os.makedirs(os.path.dirname(cache_xml), exist_ok=True)
+if os.path.exists(cache_xml):
+    print("Loading cached SpanishNVIBible.xml from:", cache_xml)
+    with open(cache_xml, 'rb') as f:
+        xml_bytes = f.read()
+else:
+    print("Downloading NVI 1999 Classic XML dataset from:", url)
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req) as resp:
+        xml_bytes = resp.read()
+    with open(cache_xml, 'wb') as f:
+        f.write(xml_bytes)
 
-url = 'https://raw.githubusercontent.com/mrk214/snapshots/main/es___spa___spa/NVI_vid_128.json'
-print("Downloading NVI dataset from:", url)
-req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-with urllib.request.urlopen(req) as resp:
-    raw_data = json.loads(resp.read().decode('utf-8'))
-
-print(f"Total books in source NVI: {len(raw_data['books'])}")
-
-# Build lookup by USFM code
-nvi_by_usfm = {b['usfm']: b for b in raw_data['books']}
+root = ET.fromstring(xml_bytes)
+books_xml = root.findall('.//book')
+print(f"Total books in SpanishNVIBible.xml: {len(books_xml)}")
+assert len(books_xml) == 66, f"Expected 66 books, got {len(books_xml)}"
 
 converted_bible = []
 
-for idx, usfm in enumerate(USFM_ORDER):
-    assert usfm in nvi_by_usfm, f"Missing USFM book {usfm}"
-    source_book = nvi_by_usfm[usfm]
+for idx, book_elem in enumerate(books_xml):
     target_meta = rvr_books[idx]
-    
-    book_name = source_book.get('human') or target_meta['name']
+    book_name = target_meta['name']
     abbrev = target_meta['abbrev']
     expected_chapters = len(target_meta['chapters'])
-    
-    source_chapters = source_book.get('chapters', [])
-    assert len(source_chapters) == expected_chapters, (
-        f"Chapter count mismatch in {book_name} ({usfm}): "
-        f"got {len(source_chapters)}, expected {expected_chapters}"
-    )
-    
-    converted_chapters = []
-    for c_idx, chap_obj in enumerate(source_chapters):
+
+    chapters_xml = book_elem.findall('chapter')
+    raw_chapters = []
+    for chap_elem in chapters_xml:
         verse_dict = {}
-        max_verse = 0
-        
-        items = chap_obj.get('items', [])
-        for item in items:
-            itype = item.get('type')
-            v_nums = item.get('verse_numbers', [])
-            lines = item.get('lines', [])
-            
-            if itype == 'verse' and v_nums and lines:
-                text = ' '.join(lines).strip()
-                text = re.sub(r'\s+', ' ', text)
-                
-                v_start = v_nums[0]
-                if v_start not in verse_dict:
-                    verse_dict[v_start] = []
-                verse_dict[v_start].append(text)
-                if v_start > max_verse:
-                    max_verse = v_start
-        
-        chapter_verses = []
-        for v in range(1, max_verse + 1):
-            if v in verse_dict:
-                chapter_verses.append(' '.join(verse_dict[v]).strip())
-            else:
-                chapter_verses.append('')
-        
-        converted_chapters.append(chapter_verses)
-    
+        for v_elem in chap_elem.findall('verse'):
+            v_num = int(v_elem.attrib.get('number', 0))
+            v_text = ''.join(v_elem.itertext()).strip()
+            v_text = re.sub(r'\s+', ' ', v_text)
+            if v_num > 0:
+                verse_dict[v_num] = v_text
+        max_verse = max(verse_dict.keys()) if verse_dict else 0
+        chapter_verses = [verse_dict.get(v, '') for v in range(1, max_verse + 1)]
+        # Deduplicate consecutive identical chapters (fixes upstream Beblia XML bug where Isaiah 65 is duplicated as ch 65 & 66 and ch 66 is labeled 67)
+        if raw_chapters and raw_chapters[-1] == chapter_verses:
+            print(f"  Deduplicated identical consecutive chapter in {book_name} (xml chapter number={chap_elem.attrib.get('number')})")
+            continue
+        raw_chapters.append(chapter_verses)
+
+    assert len(raw_chapters) == expected_chapters, (
+        f"Chapter count mismatch in {book_name} (book #{idx+1}): "
+        f"got {len(raw_chapters)}, expected {expected_chapters}"
+    )
+    converted_chapters = raw_chapters
+
     converted_bible.append({
         'abbrev': abbrev,
         'name': book_name,
@@ -90,3 +76,22 @@ with open(dest_file, 'w', encoding='utf-8') as f:
 
 size_mb = os.path.getsize(dest_file) / (1024 * 1024)
 print(f"Successfully converted and saved {dest_file} ({size_mb:.2f} MB)")
+
+print("\n--- Spot-Check Samples (NVI 1999 Clásica) ---")
+print("Génesis 1:1-3:")
+for i, v in enumerate(converted_bible[0]['chapters'][0][:3], 1):
+    print(f"  v{i}: {v}")
+print("\nGénesis 2:7:")
+print(f"  {converted_bible[0]['chapters'][1][6]}")
+print("\nGénesis 3:15:")
+print(f"  {converted_bible[0]['chapters'][2][14]}")
+print("\nSalmos 1:1:")
+print(f"  {converted_bible[18]['chapters'][0][0]}")
+print("\nIsaías 65:1:")
+print(f"  {converted_bible[22]['chapters'][64][0]}")
+print("\nIsaías 66:1:")
+print(f"  {converted_bible[22]['chapters'][65][0]}")
+print("\nJuan 3:16:")
+print(f"  {converted_bible[42]['chapters'][2][15]}")
+print("\nRomanos 8:28:")
+print(f"  {converted_bible[44]['chapters'][7][27]}")

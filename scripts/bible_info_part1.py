@@ -468,14 +468,14 @@ reg(
     }
 )
 
-# 6. NVI (Nova Versão Internacional - Português)
+# 6. NVI (Nova Versão Internacional 2001 - Português)
 reg(
     'nvi',
     en={
-        'name': 'Nova Versão Internacional (NVI - Português)',
-        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edição Brasileira Consolidada)',
-        'year': '2001 (New Testament 1993)',
-        'abbrev': 'NVI',
+        'name': 'Nova Versão Internacional (NVI 2001 - Português)',
+        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edição Clássica Brasileira de 2001)',
+        'year': '2001 (Classic Original Edition / New Testament 1993)',
+        'abbrev': 'NVI 2001',
         'language': 'Portuguese',
         'philosophy': 'Dynamic / Optimal Equivalence (Natural, Clear, and Accurate Contemporary Portuguese)',
         'manuscripts': 'Old Testament: Biblia Hebraica Stuttgartensia (Masoretic Text) and Dead Sea Scrolls. New Testament: Greek New Testament (Nestle-Aland 27th ed. / United Bible Societies 4th ed.).',
@@ -488,23 +488,24 @@ reg(
         ),
         'features': [
             'Contemporary, elegant, and culturally natural Brazilian Portuguese without vulgarity or excessive colloquialism.',
+            'Preserves the original 2001 classic Brazilian edition coordinated by Luiz Sayão and Dr. Russel Shedd, prior to the vocabulary modifications of the 2023 revision.',
             'Exceptional readability, making complex Pauline sentences and Old Testament narratives easily understandable.',
             'Retains core biblical theological terms while updating archaic vocabulary that had become unintelligible in modern Portuguese.',
             'Accurate metric conversions and cultural footnotes explaining historical measurements and ancient customs.'
         ],
         'theologyAndLegacy': (
-            'The Brazilian NVI represented a milestone in evangelical cooperation, bringing together Baptist, Presbyterian, Pentecostal, and Anglican '
+            'The Brazilian NVI (2001) represented a milestone in evangelical cooperation, bringing together Baptist, Presbyterian, Pentecostal, and Anglican '
             'scholars under the theological mentorship of legendary missionary-theologian Dr. Russel P. Shedd. It is widely considered one of the '
             'finest vernacular Bible translations in the Portuguese language.'
         ),
         'scopeAndUsage': 'The most popular modern study and reading Bible in Brazil and among Portuguese-speaking evangelicals worldwide.',
-        'copyright': 'Copyright © 1993, 2000, 2001 by Biblica, Inc. Published by Editora Vida and Biblica Brasil.'
+        'copyright': 'Copyright © 1993, 2000, 2001 by Biblica, Inc. (formerly International Bible Society). Published by Editora Vida.'
     },
     pt={
-        'name': 'Nova Versão Internacional (NVI - Português)',
-        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edição Consolidada Brasileira)',
-        'year': '2001 (Novo Testamento em 1993)',
-        'abbrev': 'NVI',
+        'name': 'Nova Versão Internacional (NVI 2001 - Português)',
+        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edição Clássica Brasileira de 2001)',
+        'year': '2001 (Edição Clássica Original / Novo Testamento em 1993)',
+        'abbrev': 'NVI 2001',
         'language': 'Português',
         'philosophy': 'Equivalência Dinâmica / Ótima (Clareza Comunicativa, Fidelidade Exegética e Elegância Contemporânea)',
         'manuscripts': 'Antigo Testamento: Biblia Hebraica Stuttgartensia (Texto Massorético) cotejada com os Manuscritos do Mar Morto e versões antigas. Novo Testamento: Texto Crítico Grego (Nestle-Aland 27ª edição / Sociedades Bíblicas Unidas 4ª edição corrigida).',
@@ -513,132 +514,135 @@ reg(
             'Iniciada em 1990 para suprir uma histórica necessidade: uma Bíblia vertida diretamente dos textos originais para um português '
             'fluente, culto e natural, que comunicasse a Palavra com vigor às novas gerações sem as barreiras dos arcaísmos ibéricos. '
             'O Novo Testamento foi publicado em 1993 e a Bíblia completa chegou às igrejas em março de 2001. '
-            'Em pouquíssimo tempo, a NVI consolidou-se como um fenômeno editorial e espiritual, revolucionando o ensino bíblico no Brasil.'
+            'Em pouquíssimo tempo, a NVI de 2001 consolidou-se como um fenômeno editorial e espiritual, revolucionando o ensino bíblico no Brasil.'
         ),
         'features': [
             'Fluência verbal incomparável em português contemporâneo, facilitando a compreensão de textos densos como as epístolas paulinas e a literatura poética.',
+            'Preserva integralmente o texto clássico original de 2001 (coordenado pelo Pr. Luiz Sayão e pelo Dr. Russel Shedd), anterior às alterações de vocabulário da revisão de 2023.',
             'Equilíbrio entre fidelidade ao texto original e clareza para o leitor de hoje, sem desvios para paráfrases liberais.',
             'Preservação zelosa dos grandes termos doutrinários do cristianismo histórico (redenção, propiciação, regeneração, graça, santificação).',
             'Notas de rodapé elucidativas com pesos, medidas e dados históricos essenciais para a compreensão do contexto bíblico.'
         ],
         'theologyAndLegacy': (
-            'A NVI brasileira uniu as mentes mais brilhantes da erudição evangélica nacional sob a mentoria do inesquecível Dr. Russel Shedd. '
+            'A NVI brasileira de 2001 uniu as mentes mais brilhantes da erudição evangélica nacional sob a mentoria do inesquecível Dr. Russel Shedd. '
             'Sua aceitação unânime em igrejas batistas, presbiterianas, congregacionais e pentecostais confirmou seu status como a tradução '
             'contemporânea de maior impacto no Brasil no início do século XXI.'
         ),
         'scopeAndUsage': 'A tradução contemporânea mais lida, citada e impressa no Brasil, padrão nas principais editoras evangélicas e faculdades teológicas.',
-        'copyright': 'Copyright © 1993, 2000, 2001 Biblica, Inc. Publicada com autorização no Brasil.'
+        'copyright': 'Copyright © 1993, 2000, 2001 Sociedade Bíblica Internacional (Biblica, Inc.). Preservada para estudo bíblico e histórico.'
     },
     es={
-        'name': 'Nova Versão Internacional (NVI - Português)',
-        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edición Consolidada en Portugués)',
-        'year': '2001 (Nuevo Testamento 1993)',
-        'abbrev': 'NVI (PT)',
+        'name': 'Nova Versão Internacional (NVI 2001 - Português)',
+        'fullName': 'Bíblia Sagrada: Nova Versão Internacional (Edición Clásica Brasileña de 2001)',
+        'year': '2001 (Edición Clásica Original / Nuevo Testamento 1993)',
+        'abbrev': 'NVI 2001 (PT)',
         'language': 'Portugués',
         'philosophy': 'Equivalencia Dinámica / Óptima (Claridad, Fidelidad y Fluidez Contemporánea)',
         'manuscripts': 'Antiguo Testamento: Biblia Hebraica Stuttgartensia. Nuevo Testamento: Texto Crítico Griego (Nestle-Aland 27ª ed.).',
         'translators': 'Comité de la Sociedad Bíblica Internacional (Biblica) liderado por teólogos brasileños de renombre como Luiz Sayão y el Dr. Russel Shedd.',
         'history': (
             'Desarrollada directamente desde el hebreo y griego a lo largo de una década para ofrecer al mundo de habla portuguesa '
-            'una Biblia moderna, elegante y de extrema fidelidad académica.'
+            'una Biblia moderna, elegante y de extrema fidelidad académica, publicada íntegramente en marzo de 2001.'
         ),
         'features': [
             'Prosa contemporánea de altísima calidad estilística, ideal para la lectura congregacional y la memorización.',
+            'Preserva el texto clásico original de 2001, previo a las revisiones léxicas posteriores de 2023.',
             'Notas al pie con aclaraciones culturales, de pesos y medidas y variantes de manuscritos.'
         ],
         'theologyAndLegacy': (
             'La versión moderna más leída e influyente de Brasil, referente en el estudio teológico y la predicación expositiva en portugués.'
         ),
         'scopeAndUsage': 'Ampliamente adoptada en todo Brasil, Portugal y comunidades de habla portuguesa.',
-        'copyright': 'Copyright © 1993, 2000, 2001 Biblica, Inc.'
+        'copyright': 'Copyright © 1993, 2000, 2001 Sociedad Bíblica Internacional (Biblica, Inc.).'
     }
 )
 
-# 7. NVIES (Nueva Versión Internacional - Español)
+# 7. NVIES (Nueva Versión Internacional 1999 - Español)
 reg(
     'nvies',
     en={
-        'name': 'Nueva Versión Internacional (NVI - Español)',
-        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edición Hispanoamericana Consolidada 2022)',
-        'year': '1999 (Revisions: 2015, 2022)',
-        'abbrev': 'NVI (ES)',
+        'name': 'Nueva Versión Internacional (NVI 1999 - Español)',
+        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edición Clásica de 1999)',
+        'year': '1999 (Classic Original Edition / New Testament 1990)',
+        'abbrev': 'NVI 1999 (ES)',
         'language': 'Spanish',
         'philosophy': 'Dynamic / Optimal Equivalence (Pan-Hispanic Natural Clarity and Textual Accuracy)',
-        'manuscripts': 'Old Testament: Biblia Hebraica Stuttgartensia (Masoretic Text) with Dead Sea Scrolls evidence. New Testament: Greek New Testament (Nestle-Aland 28th ed. / UBS 5th ed.).',
-        'translators': 'An international committee of Spanish-speaking evangelical scholars from across Latin America and Spain, sponsored by Biblica, Inc. (formerly International Bible Society) and Editorial Vida, chaired by Dr. Luciano Jaramillo and René Padilla.',
+        'manuscripts': 'Old Testament: Biblia Hebraica Stuttgartensia (Masoretic Text) with Dead Sea Scrolls evidence. New Testament: Greek New Testament (Nestle-Aland 27th ed. / UBS 4th ed.).',
+        'translators': 'An international committee of 20+ Spanish-speaking evangelical scholars from across Latin America and Spain, sponsored by the International Bible Society (Biblica) and Editorial Vida, chaired by Dr. Luciano Jaramillo and René Padilla.',
         'history': (
-            'Begun in 1990 by Biblica, the Spanish NVI aimed to provide the vast Spanish-speaking world with a translation that avoided regional idioms '
-            'while matching the clarity and textual integrity of modern biblical scholarship. Erudites from Argentina, Colombia, Mexico, Spain, Puerto Rico, '
-            'and other nations spent ten years working directly from ancient Hebrew and Greek manuscripts. Launched in 1999, it underwent careful stylistic '
-            'and linguistic polish in 2015 and was consolidated in 2022.'
+            'Begun in 1979 with the New Testament released in 1990, the Spanish NVI aimed to provide the Spanish-speaking world with a translation '
+            'directly from the original Hebrew, Aramaic, and Greek that avoided regional idioms while matching the clarity and textual integrity '
+            'of the classic 1984 English NIV. Erudites from Colombia, Argentina, Mexico, Ecuador, Spain, and other nations worked for a decade '
+            'from the ancient manuscripts, culminating in the landmark 1999 first complete edition.'
         ),
         'features': [
             'Pure, pan-Hispanic modern Spanish understood equally in Madrid, Mexico City, Bogotá, and Buenos Aires.',
+            'Preserves the original 1999 classic Spanish text prior to the 2015 and 2022 revisions, retaining beloved readings such as "Dios formó al hombre del polvo de la tierra" (Gen 2:7) and "Dichoso el hombre" (Psalm 1:1).',
             'Replaces archaic 16th-century Castilian conjugations (vosotros) with universal contemporary forms (ustedes) without sacrificing dignity.',
-            'Clear literary structure with poetic indentation, dynamic parallelisms, and explanatory footnotes.',
             'Strict adherence to orthodox evangelical theology, rendering Christological and doctrinal passages with supreme reverence.'
         ],
         'theologyAndLegacy': (
-            'The Spanish NVI has become the preferred pulpit and devotional Bible for a massive generation of Spanish-speaking pastors and believers '
-            'who desire biblical precision combined with natural, living communication.'
+            'The classic 1999 edition of the Spanish NVI became the preferred modern pulpit and study Bible for a vast generation of Spanish-speaking '
+            'pastors, seminary students, and believers seeking biblical precision combined with natural, living communication.'
         ),
         'scopeAndUsage': 'Widely read across 20+ Spanish-speaking nations in Latin America, the Caribbean, Spain, and the Hispanic church in the United States.',
-        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1999, 2015, 2022 por Biblica, Inc. Used by permission.'
+        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1985, 1990, 1999 por Sociedad Bíblica Internacional (Biblica, Inc.). Archived for classical study.'
     },
     pt={
-        'name': 'Nueva Versión Internacional (NVI - Español)',
-        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edição Hispânica Consolidada de 2022)',
-        'year': '1999 (Revisões: 2015, 2022)',
-        'abbrev': 'NVI (ES)',
+        'name': 'Nueva Versión Internacional (NVI 1999 - Español)',
+        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edição Clássica Hispânica de 1999)',
+        'year': '1999 (Edição Clássica Original / Novo Testamento 1990)',
+        'abbrev': 'NVI 1999 (ES)',
         'language': 'Espanhol',
         'philosophy': 'Equivalência Dinâmica / Ótima (Espanhol Neutro Internacional, Precisão e Fluidez Contemporânea)',
-        'manuscripts': 'Antigo Testamento: Biblia Hebraica Stuttgartensia (Texto Massorético) e Manuscritos de Qumran. Novo Testamento: Texto Crítico Grego (Nestle-Aland 28ª ed. / Sociedades Bíblicas Unidas 5ª ed.).',
-        'translators': 'Comissão Internacional de eruditos, teólogos e linguistas evangélicos hispano-americanos representando mais de 10 nações da América Latina e Espanha, patrocinada pela Biblica, Inc., sob coordenação do Dr. Luciano Jaramillo.',
+        'manuscripts': 'Antigo Testamento: Biblia Hebraica Stuttgartensia (Texto Massorético) e Manuscritos de Qumran. Novo Testamento: Texto Crítico Grego (Nestle-Aland 27ª ed. / Sociedades Bíblicas Unidas 4ª ed.).',
+        'translators': 'Comissão Internacional de mais de 20 eruditos, teólogos e linguistas evangélicos hispano-americanos representando mais de 10 nações da América Latina e Espanha, patrocinada pela Sociedade Bíblica Internacional (Biblica), sob coordenação do Dr. Luciano Jaramillo e René Padilla.',
         'history': (
-            'Iniciada em 1990 pela Biblica para proporcionar ao mundo hispânico uma tradução contemporânea em "espanhol pan-hispânico neutro", '
-            'livre de regionalismos locais e sem os arcaísmos castelhanos do século XVI presentes na tradicional Reina-Valera. '
-            'Traduzida diretamente dos manuscritos originais por biblistas de múltiplos países, foi lançada em 1999, '
-            'recebeu aprimoramentos de concordância em 2015 e foi plenamente consolidada em 2022 pela Biblica, Inc.'
+            'Iniciada com o Novo Testamento (1990) pela Sociedade Bíblica Internacional para proporcionar ao mundo hispânico uma tradução contemporânea '
+            'em "espanhol pan-hispânico neutro", livre de regionalismos locais e sem os arcaísmos castelhanos do século XVI. '
+            'Traduzida diretamente dos manuscritos hebraicos, aramaicos e gregos, a Bíblia completa foi lançada em sua consagrada 1ª edição em 1999, '
+            'alinhada à filosofia clássica da NIV 1984 inglesa e da NVI 2001 brasileira.'
         ),
         'features': [
             'Espanhol moderno, culto e compreensível em qualquer país de língua espanhola, da Espanha ao México e à Argentina.',
+            'Preserva integralmente o texto clássico original de 1999, anterior às revisões posteriores de 2015 e 2022, mantendo leituras tradicionais como «La tierra era un caos total» (Gn 1:2), «Dios formó al hombre del polvo de la tierra» (Gn 2:7) e «Dichoso el hombre» (Sl 1:1).',
             'Adota a forma pronominal universal "ustedes", eliminando formas arcaicas ou regionalistas restritas.',
-            'Rigor exegético em conformidade com as melhores edições críticas acadêmicas do hebraico e do grego.',
-            'Layout límpido com notas de rodapé esclarecendo pesos, moedas antigas e variantes textuais.'
+            'Rigor exegético em conformidade com as melhores edições críticas acadêmicas do hebraico e do grego.'
         ],
         'theologyAndLegacy': (
-            'É a principal versão moderna de referência para pregação e estudo em espanhol no SpurgeonTV, garantindo que os '
-            'versículos citados nos sermões de Charles Spurgeon ressoem com poder, clareza e autoridade no coração do leitor de hoje.'
+            'A edição clássica de 1999 da NVI é a versão moderna de referência para pregação e estudo em espanhol no SpurgeonTV, formando com a '
+            'NIV 1984 (Inglês) e a NVI 2001 (Português) a tríade histórica original das traduções internacionais contemporâneas.'
         ),
         'scopeAndUsage': 'Padrão em centenas de seminários teológicos, publicações e comunidades cristãs em todo o continente americano e na Espanha.',
-        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1999, 2015, 2022 por Biblica, Inc.'
+        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1985, 1990, 1999 por Sociedad Bíblica Internacional (Biblica, Inc.). Preservada para consulta e estudo histórico canônico.'
     },
     es={
-        'name': 'Nueva Versión Internacional (NVI - Español)',
-        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edición Hispanoamericana Consolidada 2022)',
-        'year': '1999 (Revisiones: 2015, 2022)',
-        'abbrev': 'NVI (ES)',
+        'name': 'Nueva Versión Internacional (NVI 1999 - Español)',
+        'fullName': 'Santa Biblia: Nueva Versión Internacional (Edición Clásica Original de 1999)',
+        'year': '1999 (Edición Clásica Original / Nuevo Testamento 1990)',
+        'abbrev': 'NVI 1999 (ES)',
         'language': 'Español',
         'philosophy': 'Equivalencia Dinámica / Óptima (Español Neutro Internacional, Claridad y Fidelidad Exegética)',
-        'manuscripts': 'Antiguo Testamento: Biblia Hebraica Stuttgartensia (Texto Masorético) y Rollos del Mar Muerto. Nuevo Testamento: Texto Crítico Griego (Nestle-Aland 28ª ed. / UBS 5ª ed.).',
-        'translators': 'Comité internacional de biblistas y lingüistas hispanos de más de diez países de Iberoamérica y España, coordinados por el Dr. Luciano Jaramillo bajo el auspicio de Biblica, Inc.',
+        'manuscripts': 'Antiguo Testamento: Biblia Hebraica Stuttgartensia (Texto Masorético) y Rollos del Mar Muerto. Nuevo Testamento: Texto Crítico Griego (Nestle-Aland 27ª ed. / UBS 4ª ed.).',
+        'translators': 'Comité internacional de más de veinte biblistas, hebraístas y lingüistas hispanos de más de diez países de Iberoamérica y España, coordinados por el Dr. Luciano Jaramillo y René Padilla bajo el auspicio de la Sociedad Bíblica Internacional (Biblica).',
         'history': (
-            'Iniciada en 1990 con el anhelo de brindar al pueblo hispanoparlante una traducción moderna que preservara la exactitud '
-            'de los textos sagrados en un lenguaje comprensible y natural para todo el mundo hispano, sin arcaísmos ni modismos locales. '
-            'Publicada en 1999, enriquecida en 2015 y consolidada en 2022, es la gran versión contemporánea de referencia en la actualidad.'
+            'Concebida para brindar al pueblo hispanoparlante una traducción directa desde el hebreo, arameo y griego que preservara la exactitud '
+            'de los textos sagrados en un lenguaje comprensible y natural para todo el mundo hispano, siguiendo los mismos principios de excelencia '
+            'de la clásica NIV 1984 en inglés. Tras la publicación del Nuevo Testamento en 1990 y una década de labor exegética colegiada, '
+            'la Biblia completa vio la luz en su histórica primera edición de 1999.'
         ),
         'features': [
             'Español neutro y universal, comprendido con la misma calidez y distinción en España, México, Centroamérica y Sudamérica.',
+            'Preserva íntegramente el texto clásico original de 1999 (previo a las revisiones posteriores de 2015 y 2022), conservando lecturas consagradas como «La tierra era un caos total» (Gn 1:2), «Dios el Señor formó al hombre del polvo de la tierra» (Gn 2:7), «su simiente te aplastará la cabeza, pero tú le morderás el talón» (Gn 3:15) y «Dichoso el hombre» (Sal 1:1).',
             'Sustitución de formas arcaicas por giros verbales contemporáneos dignos (uso de "ustedes").',
-            'Traducción directa desde los mejores textos críticos hebreos, arameos y griegos.',
-            'Notas de traducción minuciosas sobre pesos, medidas históricas y lecturas alternas de códices antiguos.'
+            'Traducción directa desde los textos críticos hebreos, arameos y griegos con total fidelidad a la teología evangélica histórica.'
         ],
         'theologyAndLegacy': (
-            'Es la versión de preferencia predeterminada en SpurgeonTV en español, elegida por su capacidad inigualable para transmitir '
-            'la profundidad teológica de los sermones bíblicos en un idioma vivo, diáfano y reverente.'
+            'La edición clásica de 1999 es la versión contemporánea predeterminada en SpurgeonTV en español, formando junto con la NIV 1984 (inglés) '
+            'y la NVI 2001 (portugués) la tríada histórica original de la Nueva Versión Internacional sin alteraciones de revisiones recientes.'
         ),
-        'scopeAndUsage': 'La traducción contemporánea más empleada en iglesias, cátedras y hogares evangélicos de toda Hispanoamérica.',
-        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1999, 2015, 2022 por Biblica, Inc.'
+        'scopeAndUsage': 'Ampliamente empleada y atesorada en iglesias, seminarios y hogares evangélicos de toda Hispanoamérica y España.',
+        'copyright': 'Santa Biblia, Nueva Versión Internacional® NVI® © 1985, 1990, 1999 por Sociedad Bíblica Internacional (Biblica, Inc.). Preservada para consulta y estudio histórico canónico.'
     }
 )
 

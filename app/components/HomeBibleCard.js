@@ -167,8 +167,8 @@ export default function HomeBibleCard({ lang, dict }) {
                 <option value="web">WEB (English)</option>
                 <option value="asv">ASV (English)</option>
                 <option value="acf">Almeida Corrigida (Português)</option>
-                <option value="nvi">NVI (Português)</option>
-                <option value="nvies">Nueva Versión Internacional (Español)</option>
+                <option value="nvi">NVI 2001 (Português - Clássica)</option>
+                <option value="nvies">Nueva Versión Internacional 1999 (Español - Clásica)</option>
                 <option value="rvr1960">Reina-Valera 1960 (Español)</option>
                 <option value="lbla">La Biblia de las Américas (Español)</option>
                 <option value="rvr">Reina-Valera 1909 (Español - Clásica)</option>

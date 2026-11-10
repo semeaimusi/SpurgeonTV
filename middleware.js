@@ -72,6 +72,11 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
+  // Explicit redirect for /store or /store/ directly to /en/store/
+  if (pathname === '/store' || pathname === '/store/') {
+    return NextResponse.redirect(new URL('/en/store/', request.url), 301);
+  }
+
   // 4. Default locale redirect for general URLs without locale
   const acceptLanguage = request.headers.get('accept-language') || '';
   let locale = 'en';

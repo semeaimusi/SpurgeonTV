@@ -64,7 +64,7 @@ export async function generateMetadata({ params }) {
 export default async function StorePage({ params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-  const products = getStoreProducts();
+  const products = getStoreProducts(lang);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://spurgeon.tv';
 

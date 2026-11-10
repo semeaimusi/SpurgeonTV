@@ -101,8 +101,8 @@ export default function ScriptureSettings({ dict }) {
             <option value="asv">ASV</option>
             <option value="web">WEB</option>
             <option value="acf">ACF (PT)</option>
-            <option value="nvi">NVI (PT)</option>
-            <option value="nvies">NVI (ES)</option>
+            <option value="nvi">NVI 2001 (PT)</option>
+            <option value="nvies">NVI 1999 (ES)</option>
             <option value="rvr1960">RVR 1960 (ES)</option>
             <option value="lbla">LBLA (ES)</option>
             <option value="rvr">RVR 1909 (ES)</option>

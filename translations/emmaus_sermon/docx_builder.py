@@ -187,6 +187,19 @@ def build_docx_from_data(paragraphs_data, endnotes_data, output_docx_path, templ
                 elif default_pPr is not None:
                     target_p.append(ET.fromstring(ET.tostring(default_pPr)))
                     
+                # If this is the FIRST paragraph of the endnote, insert the Word endnote reference marker!
+                if p_idx == 0:
+                    ref_r = ET.SubElement(target_p, f'{{{W_NS}}}r')
+                    ref_rPr = ET.SubElement(ref_r, f'{{{W_NS}}}rPr')
+                    ref_rStyle = ET.SubElement(ref_rPr, f'{{{W_NS}}}rStyle')
+                    ref_rStyle.attrib[f'{{{W_NS}}}val'] = 'Refdenotadefim'
+                    ET.SubElement(ref_r, f'{{{W_NS}}}endnoteRef')
+                    
+                    space_r = ET.SubElement(target_p, f'{{{W_NS}}}r')
+                    space_t = ET.SubElement(space_r, f'{{{W_NS}}}t')
+                    space_t.attrib['{http://www.w3.org/XML/1998/namespace}space'] = 'preserve'
+                    space_t.text = ' '
+                    
                 runs_info = parse_runs_from_text(new_p_text)
                 for r_info in runs_info:
                     r_elem = create_run_element(r_info, curr_rPr)
