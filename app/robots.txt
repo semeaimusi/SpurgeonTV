@@ -6,4 +6,4 @@ Disallow: /*/volumes
 Disallow: /*/videos
 Disallow: /*/download
 
-Sitemap: https://spurgeon.tv/sitemap.xml
+Sitemap: https://www.spurgeon.tv/sitemap.xml

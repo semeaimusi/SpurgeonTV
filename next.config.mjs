@@ -9,6 +9,19 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  outputFileTracingIncludes: {
+    '/[lang]/volume/[id]/[sermonId]': [
+      './public/data/sermons/**/*',
+      './public/data/*.json',
+      './public/*.json',
+      './chspurgeon-sermons-*/**/*',
+    ],
+    '/[lang]/volume/[id]': [
+      './public/data/sermons/**/*',
+      './public/data/*.json',
+      './public/*.json',
+    ],
+  },
   output: process.env.BUILD_STANDALONE ? 'standalone' : undefined,
 
   async headers() {

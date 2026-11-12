@@ -97,6 +97,15 @@
       "page": "Página",
       "of": "de"
     },
+    "storeCarousel": {
+      "eyebrow": "Livraria Recomendada",
+      "title": "Recursos & Livros em Destaque",
+      "subtitle": "Obras selecionadas para aprofundar seu conhecimento bíblico e teológico",
+      "viewStore": "Visitar Livraria",
+      "badgePreOrder": "Pré-venda",
+      "badgeBestseller": "Mais Vendido",
+      "badgeFeatured": "Destaque"
+    },
     "tools": {
       "eyebrow": "Ferramentas de Estudo",
       "title": "Mais para Explorar",

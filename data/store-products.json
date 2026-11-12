@@ -37,7 +37,7 @@
     "type": "affiliate",
     "pricingType": "paid",
     "platform": "Amazon",
-    "badge": "Pré-venda",
+    "badge": "Destaque",
     "isOwnProduct": true,
     "isComingSoon": false,
     "image": "/images/store/o_sermao_de_emaus.jpg",
@@ -67,7 +67,7 @@
     },
     "i18n": {
       "pt": {
-        "badge": "Pré-venda",
+        "badge": "Destaque",
         "image": "/images/store/o_sermao_de_emaus.jpg",
         "externalUrl": "https://a.co/d/01jP9Ts8",
         "title": "O Sermão de Emaús: Você Conhece as Promessas Messiânicas do Antigo Testamento?",
@@ -95,7 +95,7 @@
         }
       },
       "es": {
-        "badge": "Preventa",
+        "badge": "Destacado",
         "image": "/images/store/el_sermon_de_emaus.jpg",
         "externalUrl": "https://amzn.eu/d/0i6hkhG1",
         "title": "El Sermón de Emaús: ¿Conoces las Promesas Mesiánicas del Antiguo Testamento?",
@@ -123,7 +123,7 @@
         }
       },
       "en": {
-        "badge": "Pre-order",
+        "badge": "Featured",
         "image": "/images/store/the_emmaus_sermon.jpg",
         "externalUrl": "https://a.co/d/0amjYTo2",
         "title": "The Emmaus Sermon: Do You Know the Messianic Promises of the Old Testament?",

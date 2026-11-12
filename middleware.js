@@ -5,6 +5,15 @@ const LOCALES = ['en', 'pt', 'es'];
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
+  const host = request.headers.get('host') || '';
+
+  // 0. Canonical host redirect: naked domain spurgeon.tv -> www.spurgeon.tv
+  if (host === 'spurgeon.tv') {
+    const targetUrl = new URL(request.url);
+    targetUrl.host = 'www.spurgeon.tv';
+    targetUrl.protocol = 'https:';
+    return NextResponse.redirect(targetUrl, 301);
+  }
 
   // 1. Redirect legacy Blogger posts (e.g. /2011/09/post.html) to /pt/sermons/
   if (/^\/\d{4}\/\d{2}\/.*\.html$/i.test(pathname)) {
@@ -27,9 +36,13 @@ export function middleware(request) {
 
   // 3. Normalization of Volume & Sermon URLs (301 Permanent Redirect)
   // Handles:
+  // - Non-www host redirect
   // - Unpadded volume: /volume/14/ -> /pt/volume/volume-14/
   // - Single digit: /volume/volume-4/ -> /pt/volume/volume-04/
+  // - Bare volume number: /es/volume/55 -> /es/volume/volume-55/
   // - Underscores: /volume/volume-27/sermon_1586/ -> /volume/volume-27/sermon-1586/
+  // - Uppercase: /volume/volume-25/sermon_1451A/ -> /volume/volume-25/sermon-1451a/
+  // - Missing trailing slash: /sermon-443 -> /sermon-443/
   // - Missing locale: /volume/volume-01/sermon-10/ -> /pt/volume/volume-01/sermon-10/
   const volSermonMatch = pathname.match(
     /^(?:\/(en|pt|es))?\/volume\/(?:volume-)?0*([1-9][0-9]?)(?:\/(sermon[_-][^/]+))?\/?$/i
@@ -56,8 +69,8 @@ export function middleware(request) {
         canonicalPath = `/${lang}/volume/${canonicalVol}/`;
       }
 
-      // If the incoming path is not identical to the canonical path, 301 redirect
-      if (pathname !== canonicalPath && pathname !== canonicalPath.slice(0, -1)) {
+      // If the incoming path is not strictly identical to the canonical path, 301 redirect
+      if (pathname !== canonicalPath) {
         return NextResponse.redirect(new URL(canonicalPath, request.url), 301);
       }
     }

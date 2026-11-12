@@ -181,19 +181,34 @@ async function translateSermon(enRawContent) {
     }
     lineIdx++;
 
-    // 2. EXTRAÇÃO DO BLOCO DE ESCRITURA BÍBLICA (versículo-chave)
+    // 2. EXTRAÇÃO DO BLOCO DE ESCRITURA BÍBLICA (versículo-chave) APENAS NO TOPO
     const scriptureRawLines = [];
-    while (lineIdx < rawLines.length) {
-        const line = rawLines[lineIdx];
+    const maxHeaderScan = Math.min(rawLines.length, 8);
+    let scanIdx = lineIdx;
+    while (scanIdx < maxHeaderScan) {
+        const line = rawLines[scanIdx];
         if (line.trim().startsWith('>')) {
             scriptureRawLines.push(line.replace(/^>\s*/, '').trim());
-            lineIdx++;
+            scanIdx++;
+            lineIdx = scanIdx;
         } else if (scriptureRawLines.length > 0 && line.trim() === '') {
-            lineIdx++;
+            scanIdx++;
+            lineIdx = scanIdx;
+            break;
         } else if (scriptureRawLines.length > 0) {
             break;
+        } else if (line.trim() === '') {
+            scanIdx++;
         } else {
-            lineIdx++;
+            // Verifica se a linha tem formato de versículo entre aspas seguido de referência
+            const inlineVerseMatch = line.trim().match(/^["“](.+?)["”]\s*(?:—|--|-)?\s*([1-3I]?\s*[A-Za-z]+\s+\d+:\d+(?:-\d+)?)\.?$/);
+            if (inlineVerseMatch) {
+                scriptureRawLines.push(inlineVerseMatch[1].trim());
+                scriptureRawLines.push(inlineVerseMatch[2].trim());
+                lineIdx = scanIdx + 1;
+                break;
+            }
+            break;
         }
     }
 

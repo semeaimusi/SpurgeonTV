@@ -8,10 +8,12 @@ import { getPaginatedSermons, getSearchIndex } from '../../lib/sermons';
 import SearchClient from './search-client';
 import { getDictionary } from '../../lib/dictionaries';
 import { getAllArticles } from '../../lib/articles';
+import { getStoreProducts } from '../../lib/store';
 import { Suspense } from 'react';
 import HomeBibleCard from '../components/HomeBibleCard';
 import HomeDevotionalCard from '../components/HomeDevotionalCard';
 import HomeArticlesList from '../components/HomeArticlesList';
+import HomeProductsCarousel from '../components/HomeProductsCarousel';
 
 export async function generateStaticParams() {
   return [{ lang: 'en' }, { lang: 'pt' }, { lang: 'es' }];
@@ -53,6 +55,9 @@ export default async function HomePage({ params }) {
 
   // Fetch all localized articles
   const allArticles = await getAllArticles(lang);
+  
+  // Fetch localized store products
+  const storeProducts = getStoreProducts(lang);
   
   const formatArticleCard = (article) => {
     if (!article) return null;
@@ -210,6 +215,15 @@ export default async function HomePage({ params }) {
           lang={lang}
         />
       </section>
+
+      {/* ══════════════════════════════════════════
+          STORE PRODUCTS CAROUSEL
+      ══════════════════════════════════════════ */}
+      <HomeProductsCarousel
+        products={storeProducts}
+        dict={dict}
+        lang={lang}
+      />
 
       {/* ══════════════════════════════════════════
           BIBLE & DICTIONARY FEATURES

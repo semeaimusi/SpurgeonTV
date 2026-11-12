@@ -97,6 +97,15 @@
       "page": "Page",
       "of": "of"
     },
+    "storeCarousel": {
+      "eyebrow": "Recommended Bookshop",
+      "title": "Featured Books & Resources",
+      "subtitle": "Curated works to deepen your biblical and theological knowledge",
+      "viewStore": "Visit Bookshop",
+      "badgePreOrder": "Pre-order",
+      "badgeBestseller": "Bestseller",
+      "badgeFeatured": "Featured"
+    },
     "tools": {
       "eyebrow": "Study Tools",
       "title": "More to Explore",

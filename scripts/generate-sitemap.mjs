@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://spurgeon.tv';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spurgeon.tv';
 const langs = ['en', 'pt', 'es'];
 
 // Helper to ensure trailing slash
@@ -166,8 +166,8 @@ if (fs.existsSync(resolvedSearchPath)) {
     for (const item of list) {
       if (item.volume && item.slug) {
         // Enforce canonical hyphenated volume and slug (e.g. volume-01/sermon-1)
-        const cleanVolume = item.volume.replace(/_/g, '-');
-        const cleanSlug = item.slug.replace(/_/g, '-');
+        const cleanVolume = item.volume.replace(/_/g, '-').toLowerCase();
+        const cleanSlug = item.slug.replace(/_/g, '-').toLowerCase();
         addUrl({
           url: `${baseUrl}/${lang}/volume/${cleanVolume}/${cleanSlug}`,
           lastModified: now,
